@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiem Ferchichi | Embedded Systems, AI & Robotics</title>
+<meta name="description" content="Engineering student at ENSTAB specialising in embedded systems, AI and robotics. Seeking a final-year internship (PFE).">
+<style>
+:root{
+  --bg:#f3f5f1; --surface:#e8ede7; --ink:#14231c; --muted:#4d5f55;
+  --green:#1f5c43; --copper:#a85a22; --line:#c5d0c7;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1f18; --surface:#16291f; --ink:#e6eee8; --muted:#9fb3a7;
+    --green:#6fc29a; --copper:#e0a06a; --line:#27402f;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:17px/1.65 "IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green); text-underline-offset:3px}
+a:hover{color:var(--copper)}
+:focus-visible{outline:3px solid var(--copper); outline-offset:3px; border-radius:2px}
+.wrap{max-width:900px; margin:0 auto; padding:0 24px}
+
+/* top bar */
+header.bar{border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex; justify-content:space-between; align-items:center; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
+header.bar strong{font-family:"Bricolage Grotesque","Segoe UI",sans-serif; font-size:18px}
+nav a{margin-left:18px; text-decoration:none; color:var(--muted); font-size:15px}
+nav a:hover{color:var(--copper)}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero h1{
+  font-family:"Bricolage Grotesque","Segoe UI",sans-serif;
+  font-size:clamp(44px,9vw,84px); line-height:1.02; margin:0 0 18px; letter-spacing:-0.02em;
+}
+.hero .role{font-size:clamp(19px,3vw,24px); color:var(--green); margin:0 0 20px; font-weight:600}
+.hero p.lead{max-width:60ch; color:var(--muted); margin:0 0 28px}
+.trace{display:block; width:100%; max-width:520px; height:auto; margin:0 0 30px; color:var(--copper)}
+.trace path{stroke-dasharray:900; stroke-dashoffset:900; animation:draw 2.2s ease-out .2s forwards}
+.trace circle{opacity:0; animation:pop .4s ease-out forwards}
+.trace circle:nth-of-type(1){animation-delay:.3s}
+.trace circle:nth-of-type(2){animation-delay:1.1s}
+.trace circle:nth-of-type(3){animation-delay:2.2s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .trace path{animation:none; stroke-dashoffset:0}
+  .trace circle{animation:none; opacity:1}
+}
+.btns{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-block; padding:11px 20px; border-radius:4px; text-decoration:none; font-weight:600;
+  border:2px solid var(--green); color:var(--green);
+}
+.btn.primary{background:var(--green); color:var(--bg)}
+.btn:hover{border-color:var(--copper); color:var(--copper)}
+.btn.primary:hover{background:var(--copper); border-color:var(--copper); color:var(--bg)}
+
+/* sections */
+section{padding:48px 0; border-top:1px solid var(--line)}
+h2{font-family:"Bricolage Grotesque","Segoe UI",sans-serif; font-size:32px; line-height:1.15; margin:0 0 24px}
+h3{font-size:20px; margin:0 0 4px; line-height:1.3}
+.meta{color:var(--muted); font-size:15px; margin:0 0 10px}
+ul{margin:8px 0 0; padding-left:1.2em}
+li{margin:4px 0}
+.item{margin-bottom:32px}
+.item:last-child{margin-bottom:0}
+
+/* projects */
+.project{
+  background:var(--surface); border-left:4px solid var(--green);
+  padding:22px 24px; margin-bottom:24px; border-radius:0 6px 6px 0;
+}
+.project.alt{border-left-color:var(--copper)}
+.tools{margin:12px 0 0; color:var(--muted); font-size:15px}
+.tools b{color:var(--ink)}
+.project .links{margin-top:12px; font-size:15px}
+
+/* skills */
+.skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px 32px}
+.skills div p{margin:0; color:var(--muted); font-size:16px}
+.skills h3{font-size:17px; color:var(--green)}
+
+footer{padding:36px 0 56px; border-top:1px solid var(--line); color:var(--muted); font-size:15px}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <strong>Wiem Ferchichi</strong>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Wiem Ferchichi</h1>
+    <p class="role">Embedded systems, AI and robotics</p>
+
+    <svg class="trace" viewBox="0 0 520 60" aria-hidden="true" focusable="false">
+      <path d="M8 30 H120 L150 10 H300 L330 50 H440 L460 30 H512" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="8" cy="30" r="6" fill="currentColor"/>
+      <circle cx="225" cy="10" r="6" fill="currentColor"/>
+      <circle cx="512" cy="30" r="6" fill="currentColor"/>
+    </svg>
+
+    <p class="lead">
+      Engineering student in Advanced Technologies at ENSTAB, Tunisia.
+      I build intelligent machines end to end, from design and simulation to hardware validation.
+      I am looking for a final-year engineering internship (PFE) in intelligent and embedded systems.
+      <!-- TODO: add your PFE duration and start date, e.g. "A 6-month PFE starting February 2027." -->
+    </p>
+
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="CV_Wiem_Ferchichi_EN.pdf">CV (English)</a>
+      <a class="btn" href="CV_Wiem_Ferchichi_FR.pdf">CV (Français)</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About me</h2>
+    <p>
+      I study Advanced Technologies (advanced electronics and nanotechnology) at ENSTAB, after a preparatory cycle in Mathematics and Physics at the Faculty of Sciences of Monastir.
+      I have completed two applied-AI internships and delivered projects that combine hardware and software: robotic control, IoT, edge machine learning and FPGA design.
+    </p>
+    <p>
+      Outside class, I led a team as a project manager at ETC Junior Enterprise and train other students in the Electronix club.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3>4-DOF robotic arm and digital twin</h3>
+      <p class="meta">ENSTAB end-of-year project 2 · January to May 2026</p>
+      <ul>
+        <li>Motion control of a 4-DOF robotic arm with sensor feedback and serial communication between the controller and the actuators.</li>
+        <li>URDF modelling and PyBullet simulation to validate movements virtually and optimise trajectories.</li>
+      </ul>
+      <p class="tools"><b>Tools:</b> PyBullet, URDF, serial communication, PID control</p>
+      <!-- TODO: add one measured result (trajectory error, cycle time...) and a photo or video of the arm -->
+      <p class="links"><a href="https://github.com/wiem500">View on GitHub</a></p>
+    </article>
+
+    <article class="project alt">
+      <h3>Smart home security system (IoT)</h3>
+      <p class="meta">ENSTAB end-of-year project 1 · January to May 2025</p>
+      <ul>
+        <li>IoT architecture on Raspberry Pi: sensors, edge processing and supervision, with MQTT between sensors and actuators.</li>
+        <li>A CNN integrated for real-time intrusion detection.</li>
+      </ul>
+      <p class="tools"><b>Tools:</b> Raspberry Pi, MQTT, CNN, Python</p>
+      <!-- TODO: add one measured result (accuracy, response time...) and a photo -->
+      <p class="links"><a href="https://github.com/wiem500">View on GitHub</a></p>
+    </article>
+
+    <article class="project">
+      <h3>Local AI technical assistant (LLM + RAG)</h3>
+      <p class="meta">OpenCloud internship · June to August 2026</p>
+      <ul>
+        <li>A local question-answering system for documents, with a conversational interface.</li>
+        <li>Embeddings and vector search select the relevant passages and pass them to a local language model.</li>
+      </ul>
+      <p class="tools"><b>Tools:</b> Python, Flask, Ollama, ChromaDB</p>
+      <p class="links"><a href="https://github.com/wiem500">View on GitHub</a></p>
+    </article>
+
+    <article class="project alt">
+      <h3>Edge ML, mobile robotics and FPGA</h3>
+      <p class="meta">Personal projects · 2025 to 2026</p>
+      <ul>
+        <li>Sensor-data classification with Edge Impulse and model deployment on an ESP32.</li>
+        <li>A 4-wheel mobile robot with ultrasonic obstacle detection.</li>
+        <li>VHDL circuits designed, simulated and implemented on an FPGA board with Vivado.</li>
+      </ul>
+      <p class="tools"><b>Tools:</b> ESP32, Edge Impulse, VHDL, Vivado</p>
+      <p class="links"><a href="https://github.com/wiem500">View on GitHub</a></p>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <h3>Local AI technical assistant (LLM + RAG), OpenCloud</h3>
+      <p class="meta">Software development company, Tunis · June to August 2026</p>
+      <ul>
+        <li>Built a local document question-answering system with Python, Flask, Ollama and ChromaDB.</li>
+        <li>Used embeddings and vector search to feed relevant passages to the language model.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Reinforcement learning for urban energy management, LARINA</h3>
+      <p class="meta">Research laboratory in Smart Grids and Nanotechnology, Tunis · June to August 2025</p>
+      <ul>
+        <li>Ran reinforcement learning experiments for building energy management with CityLearn.</li>
+        <li>Evaluated the control behaviour in simulation.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Project manager, ETC Junior Enterprise</h3>
+      <p class="meta">2025 to 2026</p>
+      <ul>
+        <li>Managed 7 internal projects (embedded systems, energy) with a team of 5 or more members.</li>
+        <li>Took part in client projects: prospecting, planning and delivery. Organised technical and professional training sessions.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Active member and trainer, Electronix club</h3>
+      <p class="meta">2025 to 2026</p>
+      <ul>
+        <li>Supported members during hackathons, trained peers and served on the jury of internal competitions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Embedded systems and IoT</h3>
+        <p>ESP32, STM32, Raspberry Pi, Arduino, C/C++, Python, MQTT, UART, I2C, LoRa</p>
+      </div>
+      <div>
+        <h3>AI and Edge AI</h3>
+        <p>Machine learning, CNN, computer vision, reinforcement learning, local LLMs, RAG, ChromaDB, Edge Impulse</p>
+      </div>
+      <div>
+        <h3>Robotics and simulation</h3>
+        <p>URDF, PyBullet, sensor integration, PID control</p>
+      </div>
+      <div>
+        <h3>Design and tools</h3>
+        <p>VHDL, FPGA, Xilinx Vivado, Linux, Flask, Ollama, CityLearn, MATLAB/Simulink, Git, Agile/Scrum</p>
+      </div>
+    </div>
+    <p class="meta" style="margin-top:24px">Languages: Arabic (native), French (fluent), English (fluent). Certification: Quality Management ISO 9001:2015 (April 2024).</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I am looking for a final-year internship (PFE) in embedded and intelligent systems. Write to me, I will reply quickly.</p>
+    <p>
+      Email: <a href="mailto:wiem.ferchichi@enstab.ucar.tn">wiem.ferchichi@enstab.ucar.tn</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/wiem-ferchichi-584a06297">wiem-ferchichi</a><br>
+      GitHub: <a href="https://github.com/wiem500">github.com/wiem500</a><br>
+      Location: Tunis, Tunisia
+    </p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Wiem Ferchichi</div>
+</footer>
+
+</body>
+</html>
